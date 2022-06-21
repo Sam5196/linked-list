@@ -2,14 +2,46 @@ package com.bridgelabz;
 
 
 public class LinkedList {
-    public static void main(String[] args) {
-        Node head = new Node(56);
-        Node second = new Node(30);
-        Node third = new Node(70);
-        head.next = second;
-        second.next = third;
-        third.next = null;
+    Node head;
 
-        System.out.println(head.data + " " + second.data + " " + third.data);
+
+    public void addFirst(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        newNode.next = head;
+        head = newNode;
+
+    }
+
+
+    public void addLast(int data) {
+        Node newNode = new Node(data);
+        if (head == null) {
+            head = newNode;
+            return;
+        }
+        Node currentNode = head;
+        while (currentNode.next != null) {
+            currentNode = currentNode.next;
+        }
+        currentNode.next = newNode;
+    }
+
+
+    public void printList() {
+        if (head == null) {
+            System.out.println("List is empty");
+            return;
+        }
+        Node currNode = head;
+        while (currNode != null) {
+            System.out.print(currNode.data + " ");
+
+            currNode = currNode.next;
+        }
+        System.out.println();
     }
 }
