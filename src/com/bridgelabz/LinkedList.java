@@ -4,7 +4,6 @@ package com.bridgelabz;
 public class LinkedList {
     Node head;
 
-
     public void addFirst(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -29,7 +28,6 @@ public class LinkedList {
         }
         currentNode.next = newNode;
     }
-
 
     public void printList() {
         if (head == null) {
