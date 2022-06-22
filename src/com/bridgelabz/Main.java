@@ -7,7 +7,7 @@ public class Main {
         list.addFirst(70);
         list.addFirst(56);
         list.addAtSpecificPosition(30, 2);
-        list.deleteHeadNode();
+        list.deleteLastNode();
         list.printList();
     }
 }
