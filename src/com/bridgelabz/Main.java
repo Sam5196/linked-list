@@ -5,9 +5,12 @@ public class Main {
 
         LinkedList list = new LinkedList();
         list.addFirst(70);
+        list.addFirst(40);
         list.addFirst(30);
         list.addFirst(56);
-        list.searchListAndAdd(40);
+        list.deleteNode(40);
         list.printList();
+        list.size();
+
     }
 }

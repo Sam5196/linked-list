@@ -83,19 +83,52 @@ public class LinkedList {
 
         Node currentNode = head;
         while (currentNode != null) {
-            if (currentNode.data == key)
+            if (currentNode.data == key) {
                 System.out.println(count);
-            currentNode = currentNode.next;
-            count++;
+                currentNode = currentNode.next;
+                count++;
+                return count;
+            }
+
+            else {
+                System.out.println("No result found");
+
+            }
         }
         return count;
     }
-
     public void searchListAndAdd(int key) {
         int count = searchList(key);
         addAtSpecificPosition(key, count - 1);
     }
 
+    public void deleteNode(int data) {
+        Node currentNode = head;
+        Node previousNode = head;
+
+        while (currentNode != null) {
+            if (currentNode.data == data) {
+                previousNode.next = currentNode.next;
+                return;
+            }
+            previousNode = currentNode;
+            currentNode = currentNode.next;
+        }
+        System.out.println(" Unable to find the node for value " + data);
+
+    }
+
+    public void size() {
+        Node currentNode = head;
+        int count = 0;
+
+        while (currentNode != null) {
+            count++;
+            currentNode = currentNode.next;
+        }
+
+        System.out.println("The size of the LinkedList is : " + count);
+    }
     public void printList() {
         if (head == null) {
             System.out.println("List is empty");
