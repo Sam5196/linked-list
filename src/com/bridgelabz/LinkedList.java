@@ -15,7 +15,6 @@ public class LinkedList {
 
     }
 
-
     public void addLast(int data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -29,6 +28,34 @@ public class LinkedList {
         currentNode.next = newNode;
     }
 
+    void addAtSpecificPosition(int data, int position) {
+        Node newNode = new Node(data);
+        newNode.data = data;
+        newNode.next = null;
+
+        if(position < 1) {
+            System.out.print("\nposition should be >= 1.");
+        } else if (position == 1) {
+            newNode.next = head;
+            head = newNode;
+        } else {
+
+            Node temp = new Node(data);
+            temp = head;
+            for(int i = 1; i < position-1; i++) {
+                if(temp != null) {
+                    temp = temp.next;
+                }
+            }
+
+            if(temp != null) {
+                newNode.next = temp.next;
+                temp.next = newNode;
+            } else {
+                System.out.print("\nThe previous node is null.");
+            }
+        }
+    }
     public void printList() {
         if (head == null) {
             System.out.println("List is empty");
@@ -40,6 +67,6 @@ public class LinkedList {
 
             currNode = currNode.next;
         }
-        System.out.println();
+        System.out.println("NULL");
     }
 }

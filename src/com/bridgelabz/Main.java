@@ -5,8 +5,8 @@ public class Main {
 
         LinkedList list = new LinkedList();
         list.addFirst(70);
-        list.addFirst(30);
         list.addFirst(56);
+        list.addAtSpecificPosition(30, 2);
         list.printList();
     }
 }
