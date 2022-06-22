@@ -77,8 +77,10 @@ public class LinkedList {
         currentHead.next = null;
 
     }
-    public void searchList(int key) {
-        int count = 1;
+    public static int count = 1;
+
+    public int searchList(int key) {
+
         Node currentNode = head;
         while (currentNode != null) {
             if (currentNode.data == key)
@@ -86,7 +88,14 @@ public class LinkedList {
             currentNode = currentNode.next;
             count++;
         }
+        return count;
     }
+
+    public void searchListAndAdd(int key) {
+        int count = searchList(key);
+        addAtSpecificPosition(key, count - 1);
+    }
+
     public void printList() {
         if (head == null) {
             System.out.println("List is empty");
